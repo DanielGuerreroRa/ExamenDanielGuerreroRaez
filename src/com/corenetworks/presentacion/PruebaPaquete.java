@@ -8,36 +8,42 @@ import java.util.Scanner;
 public class PruebaPaquete {
 
     public static void main(String[] args) {
-        Paquete e2 = new Paquete();
         Scanner teclado = new Scanner(System.in);
         System.out.println("Escribe la Ip Origen: ");
-        e2.setIpOrigen(teclado.nextInt());
+        int ipOrigen = teclado.nextInt();
         System.out.println("Escribe la Ip Destino: ");
-        e2.setIpDestino(teclado.nextInt());
+        int ipDestino = teclado.nextInt();
         System.out.println("Escriba el mensaje: ");
         teclado.nextLine();
-        e2.setMensaje(teclado.nextLine());
-        String[] caracteres;
-        if (e2.getMensaje().length() % 20 == 0) {
+        String mensaje = teclado.nextLine();
+        int contadorPaquetes;
+        if (mensaje.length() % 20 == 0) {
             //Es par
-            caracteres = new String[e2.getMensaje().length() / 20];
+            contadorPaquetes = mensaje.length() / 20;
         } else {    //Es impar
-            caracteres = new String[e2.getMensaje().length() / 20 * 1];
+            contadorPaquetes = mensaje.length() / 20;
+            contadorPaquetes = contadorPaquetes + 1;
         }
-        for (int i = 0; i < caracteres.length; i++) {
+        ArrayList<Paquete> paquetes = new ArrayList<Paquete>();
+        for (int i = 0; i < contadorPaquetes; i++) {
+            Paquete e2 = new Paquete();
+            e2.setIpOrigen(ipOrigen);
+            e2.setIpDestino(ipDestino);
+            e2.setContadorPaquetes(contadorPaquetes);
             int posicionInicial = i * 20;
-            System.out.println(posicionInicial);
-            caracteres[i] = e2.getMensaje().substring(posicionInicial, posicionInicial + 20);
-            System.out.println(caracteres[i]);
-            if (e2.getMensaje().length() % 20 != 0 && i == caracteres.length - 1) {
-                caracteres[i] = e2.getMensaje().substring(posicionInicial);
-                e2.setContadorPaquetes(caracteres.length);
-                System.out.println("El número total de paquetes es: " +e2.getContadorPaquetes());
+            String mens2;
+            if (mensaje.length() % 20 != 0 && i == contadorPaquetes - 1) {
+                mens2 = mensaje.substring(posicionInicial);
+            }else{
+                mens2 = mensaje.substring(posicionInicial, posicionInicial + 20);
             }
-            String[] paquetes = new String[e2.getContadorPaquetes()];
-
-
-
+            e2.setMensaje(mens2);
+            System.out.println(posicionInicial);
+            System.out.println(e2.getIpOrigen());
+            System.out.println(e2.getIpDestino());
+            System.out.println(e2.getMensaje());
+            System.out.println(e2.getContadorPaquetes());
+            paquetes.add(e2);
             }
         }
     }
