@@ -9,6 +9,17 @@ public class Paquete {
     private int leerPaquete;
     //Métodos
 
+    @Override
+    public String toString() {
+        return "Paquete{" +
+                "ipOrigen=" + ipOrigen +
+                ", ipDestino=" + ipDestino +
+                ", mensaje='" + mensaje + '\'' +
+                ", contadorPaquetes=" + contadorPaquetes +
+                ", leerPaquete=" + leerPaquete +
+                '}';
+    }
+
     //Constructores
 
     public Paquete() {

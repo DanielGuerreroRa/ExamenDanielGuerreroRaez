@@ -8,7 +8,9 @@ public class Servidor {
 
 
     //public String leerPaquetes(Paquete[] paquetes) {}
-    public boolean verificarPaquetes(Paquete[] paquetes){
+
+    public boolean verificarPaquetes(Paquete[] paquetes)
+    {
         return true;
     }
 
