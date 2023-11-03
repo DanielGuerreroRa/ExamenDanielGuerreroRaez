@@ -18,9 +18,9 @@ public class PruebaPaquete {
         String mensaje = teclado.nextLine();
         int contadorPaquetes;
         if (mensaje.length() % 20 == 0) {
-            //Es par
+
             contadorPaquetes = mensaje.length() / 20;
-        } else {    //Es impar
+        } else {
             contadorPaquetes = mensaje.length() / 20;
             contadorPaquetes = contadorPaquetes + 1;
         }

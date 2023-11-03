@@ -7,7 +7,7 @@ public class Servidor {
     //Métodos
 
 
-
+    //public String leerPaquetes(Paquete[] paquetes) {}
     public boolean verificarPaquetes(Paquete[] paquetes){
         return true;
     }
